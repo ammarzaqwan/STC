@@ -54,7 +54,7 @@ public class BuyerServiceImpl implements BuyerService {
     @Override
     public BuyerResDTO updBuyers(BuyerReqDTO dto, UUID id) {
         Buyer buyers = repository.findById(id)
-                .orElseThrow(() -> new ApiException("Book not exist", HttpStatus.BAD_REQUEST));
+                .orElseThrow(() -> new ApiException("Buyer not exist", HttpStatus.BAD_REQUEST));
 
         buyers.setEmail(dto.getEmail());
         buyers.setName(dto.getName());
@@ -70,7 +70,7 @@ public class BuyerServiceImpl implements BuyerService {
     @Override
     public BuyerResDTO getBuyersById(UUID id) {
         Buyer buyer = repository.findById(id)
-                .orElseThrow(()-> new ApiException("Book not found",HttpStatus.BAD_REQUEST));
+                .orElseThrow(()-> new ApiException("Buyer not found",HttpStatus.BAD_REQUEST));
 
         return mapper.toDto(buyer);
     }
@@ -78,7 +78,7 @@ public class BuyerServiceImpl implements BuyerService {
     @Override
     public void deleteBuyers(UUID id) {
         Buyer buyer = repository.findById(id)
-                .orElseThrow(()-> new ApiException("Book not found",HttpStatus.BAD_REQUEST));
+                .orElseThrow(()-> new ApiException("Buyer not found",HttpStatus.BAD_REQUEST));
 
         repository.delete(buyer);
     }
