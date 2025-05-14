@@ -1,4 +1,5 @@
 package com.assessment.STC.dto.item;
+import com.assessment.STC.dto.seller.LightSellerDTO;
 import com.assessment.STC.dto.seller.SellerResDTO;
 import lombok.*;
 
@@ -14,5 +15,5 @@ public class ItemResDTO {
     private String description;
     private double price;
     private int quantity;
-    private SellerResDTO seller;
+    private LightSellerDTO seller;
 }

@@ -2,6 +2,7 @@ package com.assessment.STC.service.item;
 
 import com.assessment.STC.dto.item.ItemReqDTO;
 import com.assessment.STC.dto.item.ItemResDTO;
+import com.assessment.STC.dto.seller.LightSellerDTO;
 import com.assessment.STC.dto.seller.SellerResDTO;
 import com.assessment.STC.exception.ApiException;
 import com.assessment.STC.mapper.item.ItemMapper;
@@ -105,7 +106,7 @@ public class ItemServiceImpl implements ItemService{
                 .description(saved.getDescription())
                 .price(saved.getPrice())
                 .quantity(saved.getQuantity())
-                .seller(SellerResDTO.builder()
+                .seller(LightSellerDTO.builder()
                         .id(seller.getId())
                         .name(seller.getName())
                         .email(seller.getEmail())
@@ -122,7 +123,7 @@ public class ItemServiceImpl implements ItemService{
                         .description(item.getDescription())
                         .price(item.getPrice())
                         .quantity(item.getQuantity())
-                        .seller(SellerResDTO.builder()
+                        .seller(LightSellerDTO.builder()
                                 .id(item.getSeller().getId())
                                 .name(item.getSeller().getName())
                                 .email(item.getSeller().getEmail())
